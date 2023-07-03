@@ -26,7 +26,7 @@ public class Tweet {
         System.out.println("tweet id: " + tweet_id);
         System.out.println("by: " + username);
         System.out.println("tweet: " + text);
-        System.out.println(like_count + " likes");
+        System.out.println(like_count + " likes\n");
     }
 
 

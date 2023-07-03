@@ -16,7 +16,7 @@ public class Test {
                     inputData(tweets);
                     break;
                 case 2:
-                    searchData();
+                    searchData(tweets);
                     break;
                 case -1:
                     System.out.println("Program terminated...");
@@ -35,7 +35,7 @@ public class Test {
         String text = "";
         String username = "";
         Scanner s = new Scanner(System.in);
-        System.out.println("\n");
+        System.out.println(); // newline before typing1
         System.out.print("enter id: ");
         id = s.nextInt();
         System.out.print("enter likes: ");
@@ -48,12 +48,20 @@ public class Test {
         Tweet obj = new Tweet(id, text, username, count);
         tweet.add(obj);
 
-         tweet.get(0).print_data();
+        obj.print_data();
 
     }
 
-    public static void searchData(){
+    public static void searchData(ArrayList<Tweet> tweet){
         System.out.println("Search database(array) by username.");
+        System.out.println("Enter username: ");
+        Scanner s = new Scanner(System.in);
+        String search = s.next().toLowerCase();
+        for (int i=0; i < tweet.size(); i++) {
+            if (search.equals(tweet.get(i).username)) {
+                tweet.get(i).print_data();
+            }
+        }
     }
 
     public static void printData(){
