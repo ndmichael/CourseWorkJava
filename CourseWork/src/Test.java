@@ -6,7 +6,7 @@ public class Test {
         boolean flag = true;
         while (flag){
             Scanner scan = new Scanner(System.in);
-            System.out.println("Enter 1 for input data \n"+ "Enter 2 for search data \n" + "press -1 to terminate.");
+            System.out.println("Enter 1 for input data \n"+ "Enter 2 for search data \n" + "Enter 3 to print all data \n" + "press -1 to terminate.");
             int choice = scan.nextInt();
 //            if (choice == -1){
 //                break;
@@ -17,6 +17,9 @@ public class Test {
                     break;
                 case 2:
                     searchData(tweets);
+                    break;
+                case 3:
+                    printData(tweets);
                     break;
                 case -1:
                     System.out.println("Program terminated...");
@@ -35,7 +38,8 @@ public class Test {
         String text = "";
         String username = "";
         Scanner s = new Scanner(System.in);
-        System.out.println(); // newline before typing1
+        System.out.println("Enter your data to be stored."); // newline before typing1
+        System.out.println("------------------------------");
         System.out.print("enter id: ");
         id = s.nextInt();
         System.out.print("enter likes: ");
@@ -64,8 +68,13 @@ public class Test {
         }
     }
 
-    public static void printData(){
-
+    public static void printData(ArrayList<Tweet> tweet){
+        System.out.println("All data stored in the Array DB.");
+        System.out.println("---------------------------------");
+        for (int i=0; i < tweet.size(); i++) {
+                tweet.get(i).print_data();
+        }
+        System.out.println();
     }
 
     public static void main(String args []){
