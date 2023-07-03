@@ -36,14 +36,22 @@ public class Test {
 
     }
 
+    /*
+     * @return void;
+     * allows users to input data to be stored in the array
+     */
     public static void inputData(ArrayList<Tweet> tweet){
+        // declared variables
         int id, count;
 
+        // using JOptionPane to collect inputs from the users.
         JOptionPane.showMessageDialog(null, "Enter your data to be stored.");
         String inp1 = JOptionPane.showInputDialog("Enter tweetID: ");
         String inp2 = JOptionPane.showInputDialog("Enter Likes: ");
         String username = JOptionPane.showInputDialog("Enter Username: ");
         String text = JOptionPane.showInputDialog("Enter Tweet: ");
+
+        // convert inputs from string to int since JOptionPane default to string
         id = Integer.parseInt(inp1);
         count = Integer.parseInt(inp2);
 
@@ -54,6 +62,10 @@ public class Test {
 
     }
 
+    /*
+     * @return void;
+     * Allows users to search for data by username
+     */
     public static void searchData(ArrayList<Tweet> tweet){
         System.out.println("Search database(array) by username.");
         System.out.println("Enter username: ");
@@ -66,6 +78,10 @@ public class Test {
         }
     }
 
+    /*
+     * @return void;
+     * print all data in stored in the array.
+     */
     public static void printData(ArrayList<Tweet> tweet){
         System.out.println("All data stored in the Array DB.");
         System.out.println("---------------------------------");
